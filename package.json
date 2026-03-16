@@ -1,4 +1,8 @@
 {
   "name": "crypto-currency",
-  "packageManager": "yarn@4.13.0"
+  "packageManager": "yarn@4.13.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
 }
