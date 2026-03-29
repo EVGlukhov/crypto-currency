@@ -1,17 +1,28 @@
 {
   "name": "@crypto-currency/ui",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "workspaces": [
     "packages/*"
+  ],
+  "files": [
+    "build"
+  ],
+  "main": "./build/ui.umd.cjs",
+  "module": "./build/ui.js",
+  "types": "./build/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
   ],
   "description": "The package containing UI components",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^19.2.4",
@@ -22,35 +33,31 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
+    "@chromatic-com/storybook": "^5.1.1",
     "@eslint/js": "^9.39.4",
+    "@storybook/addon-a11y": "^10.3.3",
+    "@storybook/addon-docs": "^10.3.3",
+    "@storybook/addon-onboarding": "^10.3.3",
+    "@storybook/addon-vitest": "^10.3.3",
+    "@storybook/react-vite": "^10.3.3",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "^4.1.2",
+    "@vitest/coverage-v8": "^4.1.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-storybook": "^10.3.3",
     "globals": "^17.4.0",
+    "playwright": "^1.58.2",
+    "storybook": "^10.3.3",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^8.0.0"
-  },
-  "files": [
-    "build"
-  ],
-  "main": "./build/ui.umd.cjs",
-  "module": "./build/ui.js",
-  "types": "./build/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./build/ui.js",
-      "require": "./build/ui.umd.cjs",
-      "types": "./build/index.d.ts"
-    }
-  },
-  "sideEffects": [
-    "**/*.css"
-  ]
+    "vite": "^8.0.0",
+    "vitest": "^4.1.2"
+  }
 }

@@ -1,1 +1,1 @@
-export { Banner } from './components';
+export { Card } from './components';
