@@ -27,9 +27,7 @@
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sass-embedded": "^1.98.0",
-    "vite-plugin-dts": "^4.5.4",
-    "vite-plugin-lib-inject-css": "^2.2.2"
+    "sass-embedded": "^1.98.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
@@ -38,6 +36,7 @@
     "@storybook/addon-a11y": "^10.3.3",
     "@storybook/addon-docs": "^10.3.3",
     "@storybook/addon-onboarding": "^10.3.3",
+    "@storybook/addon-themes": "^10.3.3",
     "@storybook/addon-vitest": "^10.3.3",
     "@storybook/react-vite": "^10.3.3",
     "@types/babel__core": "^7.20.5",
@@ -58,6 +57,8 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-lib-inject-css": "^2.2.2",
     "vitest": "^4.1.2"
   }
 }

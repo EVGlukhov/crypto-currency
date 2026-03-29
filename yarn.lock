@@ -354,6 +354,7 @@ __metadata:
     "@storybook/addon-a11y": "npm:^10.3.3"
     "@storybook/addon-docs": "npm:^10.3.3"
     "@storybook/addon-onboarding": "npm:^10.3.3"
+    "@storybook/addon-themes": "npm:^10.3.3"
     "@storybook/addon-vitest": "npm:^10.3.3"
     "@storybook/react-vite": "npm:^10.3.3"
     "@types/babel__core": "npm:^7.20.5"
@@ -1432,6 +1433,17 @@ __metadata:
   peerDependencies:
     storybook: ^10.3.3
   checksum: 10c0/6cfe689a673cef3ba16d6fa79c1c5fa4c911bf3072ffab4c2d22505f3dd8b89ba9e47e97682ba485d1334a8cd2d83d309a58349ca44af91023b8ae7068f5cf00
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-themes@npm:^10.3.3":
+  version: 10.3.3
+  resolution: "@storybook/addon-themes@npm:10.3.3"
+  dependencies:
+    ts-dedent: "npm:^2.0.0"
+  peerDependencies:
+    storybook: ^10.3.3
+  checksum: 10c0/c3f288f22ade0663d9c4687777679ed64150a08ec5065deb50bf22c7f3e6a93ea48fc83afbfe99e231a8d2dd574093130585ba91c8af655ffe17f22659216a9d
   languageName: node
   linkType: hard
 
