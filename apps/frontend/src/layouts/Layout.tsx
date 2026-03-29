@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from "react";
 import styles from './styles.module.scss';
 import { Navbar } from "../components/Navbar/Navbar";
+import { Masthead } from '../components/Masthead/Masthead';
 
 interface Props {
     children: ReactNode
