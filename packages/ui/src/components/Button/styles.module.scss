@@ -1,0 +1,29 @@
+@use '../../styles/variables';
+
+.button {
+    outline: none;
+    border: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.contained {
+    text-align: center;
+    color: variables.$color-white;
+    background-color: variables.$color-button-bg;
+    border-radius: 9px;
+    transition: background-color 0.2s ease-in-out;
+
+    &.small {
+        font-weight: 600;
+        padding: 0 10.5px;
+        font-size: 11px;
+        line-height: 17px;
+    }
+}
+

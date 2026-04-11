@@ -11,10 +11,29 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Small: Story = {
   args: {
     name: 'Sun-Glass',
     bid: 1.75,
-    timestamp: new Date()
+    timestamp: new Date(),
+    size: 'small'
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    name: 'Sun-Glass',
+    bid: 1.75,
+    timestamp: new Date(),
+    size: 'medium'
+  },
+};  
+
+export const Large: Story = { 
+  args: {
+    name: 'Sun-Glass',
+    bid: 1.75,
+    timestamp: new Date(),
+    size: 'large'
   },
 };

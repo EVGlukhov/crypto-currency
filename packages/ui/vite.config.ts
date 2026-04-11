@@ -4,9 +4,11 @@ import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import dts from 'vite-plugin-dts'
+import cleanPlugin from 'vite-plugin-clean'
 
 export default defineConfig({
   plugins: [
+    cleanPlugin(),
     react(), 
     libInjectCss(),
     dts({
@@ -41,4 +43,10 @@ export default defineConfig({
       }
     },
   },
+  resolve: {
+    tsconfigPaths: true,
+    alias: {
+      '@ui': resolve(__dirname, './src'),
+    },
+  },  
 } satisfies UserConfig);

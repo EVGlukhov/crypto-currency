@@ -18,6 +18,9 @@
     "declaration": true,
     "outDir": "./build",
 		"declarationDir": "./build",
+    "paths": {
+      "@ui/*": ["./src/*"],
+    },
 
     /* Linting */
     "strict": true,
@@ -25,7 +28,7 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
   },
   "include": ["src"],
   "exclude": ["src/**/*.stories.ts"],
