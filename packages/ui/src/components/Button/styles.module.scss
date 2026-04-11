@@ -1,4 +1,5 @@
-@use '../../styles/variables';
+@use '@ui/styles/variables';
+@use '@ui/styles/mixins';
 
 .button {
     outline: none;
@@ -17,13 +18,16 @@
     color: variables.$color-white;
     background-color: variables.$color-button-bg;
     border-radius: 9px;
-    transition: background-color 0.2s ease-in-out;
+    font-weight: 600;
 
-    &.small {
-        font-weight: 600;
-        padding: 0 10.5px;
-        font-size: 11px;
-        line-height: 17px;
+    @include mixins.font-size(11px);
+    padding: 10.5px 17.5px;
+    line-height: 17px;
+
+    @include mixins.desktop {
+        @include mixins.font-size(14px);
+        padding: 14.5px 25px;
+        line-height: 21px;
     }
 }
 
