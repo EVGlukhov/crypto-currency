@@ -7,29 +7,31 @@ import {
   type JSX,
 } from 'react'
 
-export type BaseButtonComponent =
+export namespace BaseButton {
+  export type Type =
   | keyof JSX.IntrinsicElements
   | ComponentType<any>;
 
-type BaseProps<C extends BaseButtonComponent = 'button'> = {
-  component?: C
-  className?: string
-  style?: CSSProperties
-} & Attributes
+  type BaseProps<C extends Type = 'button'> = {
+    component?: C
+    className?: string
+    style?: CSSProperties
+  } & Attributes
 
-export type BaseButtonProps<C extends BaseButtonComponent = 'button'> =
-  C extends keyof JSX.IntrinsicElements
-    ? Omit<ComponentPropsWithRef<C>, keyof BaseProps<C>> & BaseProps<C>
-    : C extends ComponentType<infer P>
-    ? P extends ComponentPropsWithRef<any>
-      ? Omit<P, keyof BaseProps<C>> & BaseProps<C>
+  export type Props<C extends Type = 'button'> =
+    C extends keyof JSX.IntrinsicElements
+      ? Omit<ComponentPropsWithRef<C>, keyof BaseProps<C>> & BaseProps<C>
+      : C extends ComponentType<infer P>
+      ? P extends ComponentPropsWithRef<any>
+        ? Omit<P, keyof BaseProps<C>> & BaseProps<C>
+        : never
       : never
-    : never
 
-export default function BaseButton<C extends BaseButtonComponent = 'button'>({
-  component = 'button',
-  children,
-  ...props
-}: BaseButtonProps<C>) {
-  return createElement(component, props, children)
+    export function Button<C extends BaseButton.Type = 'button'>({
+      component = 'button',
+      children,
+      ...props
+    }: BaseButton.Props<C>) {
+      return createElement(component, props, children)
+    }
 }

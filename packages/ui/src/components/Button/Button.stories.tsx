@@ -1,12 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import Button from './Button';
+import Button, { type Props as ButtonProps } from './Button';
 
 const meta = {
   component: Button,
-  title: 'Button',
+  title: 'Components/Button',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+  },
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['contained']
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large']
+    },
+    disabled: {
+      control: 'boolean'
+    }
   },
 } satisfies Meta<typeof Button>;
 
@@ -15,12 +28,10 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Contained: Story = {
-  render: () => (
-    <div  style={{ width: '80vw', display: 'flex', justifyContent: 'space-between' }}>
-      <Button variant='contained' size='small'>Place bid</Button>
-      <Button variant='contained' size='medium'>Place bid</Button>
-      <Button variant='contained' size='large'>Place bid</Button>
-    </div>
-    
-  )
+  args: {
+    variant: 'contained',
+    size: 'small',
+    disabled: false
+  },
+  render: (args: ButtonProps) => <Button {...args}>Place bid</Button>
 };

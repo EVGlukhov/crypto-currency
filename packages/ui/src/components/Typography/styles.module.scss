@@ -1,0 +1,308 @@
+@mixin font-source-sans($size: false, $colour: false, $weight: false,  $lh: false) {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+// {
+//   "Sun-Glass": {
+//     "$type": "typography",
+//     "$value": {
+//       "fontFamily": "Poppins",
+//       "fontSize": "22px",
+//       "fontWeight": 600,
+//       "letterSpacing": "0px",
+//       "lineHeight": "24px",
+//       "textTransform": "none",
+//       "textDecoration": "none"
+//     }
+//   },
+//   "titles": {
+//     "Title XL": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "64px",
+//         "fontWeight": 700,
+//         "letterSpacing": "0%",
+//         "lineHeight": "72px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Title Large": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "56px",
+//         "fontWeight": 700,
+//         "letterSpacing": "0%",
+//         "lineHeight": "64px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Title Medium": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "48px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "56px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     }
+//   },
+//   "headings": {
+//     "Heading H1": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "40px",
+//         "fontWeight": 700,
+//         "letterSpacing": "0%",
+//         "lineHeight": "48px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Heading H2": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "36px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "44px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Heading H3": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "32px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "40px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Heading H4": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "28px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "36px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Heading H5": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "24px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "32px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Heading H6": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "20px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "28px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     }
+//   },
+//   "body": {
+//     "Body XL": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "20px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "32px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Body Large": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "18px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "28px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Body Regular": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "16px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "24px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Body Small": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "14px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "22px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Body XS": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "12px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "18px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     }
+//   },
+//   "labels": {
+//     "Label Large": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "16px",
+//         "fontWeight": 500,
+//         "letterSpacing": "0%",
+//         "lineHeight": "24px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Label Medium": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "14px",
+//         "fontWeight": 500,
+//         "letterSpacing": "0%",
+//         "lineHeight": "20px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Label Small": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "12px",
+//         "fontWeight": 500,
+//         "letterSpacing": "0%",
+//         "lineHeight": "16px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Label XS": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "10px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "14px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Overline Large": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "14px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "20px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Overline Small": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "10px",
+//         "fontWeight": 600,
+//         "letterSpacing": "0%",
+//         "lineHeight": "16px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     }
+//   },
+//   "captions": {
+//     "Caption Large": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "14px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "20px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Caption Medium": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "12px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "18px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     },
+//     "Caption Small": {
+//       "$type": "typography",
+//       "$value": {
+//         "fontFamily": "Inter",
+//         "fontSize": "10px",
+//         "fontWeight": 400,
+//         "letterSpacing": "0%",
+//         "lineHeight": "14px",
+//         "textTransform": "none",
+//         "textDecoration": "none"
+//       }
+//     }
+//   }
+// }

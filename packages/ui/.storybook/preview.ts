@@ -10,6 +10,12 @@ import uiTheme from "./uiTheme";
 export default definePreview({
   addons: [addonDocs()],
   parameters: {
+    options: {
+      storySort: {
+        order: ['Overview', ['Introduction', 'Colors'], 'Components'],
+        locales: 'en-US',
+      },
+    },
     initialGlobals: {
       backgrounds: { value: "dark" },
     },
