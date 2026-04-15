@@ -4,7 +4,7 @@ import addonA11y from "@storybook/addon-a11y";
 import addonDocs from "@storybook/addon-docs";
 import uiTheme from "./uiTheme";
 
-// import "@crypto-currency/styles.scss";
+import "@crypto-currency/ui/ui.css";
 
 export default definePreview({
   addons: [addonDocs(), addonA11y(), addonThemes()],
