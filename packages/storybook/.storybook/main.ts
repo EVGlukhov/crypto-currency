@@ -10,18 +10,15 @@ export default defineMain({
   ],
   addons: [
     getAbsolutePath("@chromatic-com/storybook"),
-    getAbsolutePath("@storybook/addon-vitest"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-docs"),
-    getAbsolutePath("@storybook/addon-onboarding"),
-    getAbsolutePath("@storybook/addon-themes")
+    getAbsolutePath("@storybook/addon-themes"),
+    getAbsolutePath("@storybook/addon-vitest")
   ],
   framework: getAbsolutePath("@storybook/react-vite"),
   core: {
-    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+    builder: '@storybook/builder-vite',
   },
-  logLevel: 'debug',
-  staticDirs: ['../build'],
   viteFinal: async (config) => {
     return mergeConfig(config, {
       base: resolve(process.cwd(), '../src/'),

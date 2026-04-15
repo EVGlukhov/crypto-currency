@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import Card from './Card';
+import { Card } from '@crypto-currency/ui';
 
 const meta = {
   component: Card,
@@ -14,11 +14,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Basic = {
   args: {
     name: 'Sun-Glass',
     bid: 1.75,
     timestamp: new Date(),
     size: 'small'
   },
-};
+  render: (args: React.ComponentProps<typeof Card>) => {
+    return <Card {...args} />
+  }
+} satisfies Story;

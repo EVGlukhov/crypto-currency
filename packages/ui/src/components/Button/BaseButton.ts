@@ -7,12 +7,12 @@ import {
   type JSX,
 } from 'react'
 
-export namespace BaseButton {
+export namespace NSBaseButton {
   export type Type =
   | keyof JSX.IntrinsicElements
   | ComponentType<any>;
 
-  type BaseProps<C extends Type = 'button'> = {
+  export type BaseProps<C extends Type = 'button'> = {
     component?: C
     className?: string
     style?: CSSProperties
@@ -27,11 +27,11 @@ export namespace BaseButton {
         : never
       : never
 
-    export function Button<C extends BaseButton.Type = 'button'>({
-      component = 'button',
-      children,
-      ...props
-    }: BaseButton.Props<C>) {
-      return createElement(component, props, children)
-    }
+  export function Button<C extends Type = 'button'>({
+    component = 'button',
+    children,
+    ...props
+  }: Props<C>) {
+    return createElement(component, props, children)
+  }
 }

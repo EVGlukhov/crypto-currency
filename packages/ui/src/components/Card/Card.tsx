@@ -1,4 +1,4 @@
-import Button from '@ui/components/Button/Button';
+import Button from '../Button/Button';
 import styles from './styles.module.scss'
 
 interface Props {

@@ -1,8 +1,12 @@
 {
   "name": "crypto-currency",
   "packageManager": "yarn@4.13.0",
-  "workspaces": [
+  "workspaces": [ 
     "packages/*",
     "apps/*"
-  ]
+  ],
+  "scripts": {
+    "ui:build": "yarn workspace @crypto-currency/ui run build",
+    "storybook:dev": "yarn workspace @crypto-currency/storybook run dev"
+  }
 }

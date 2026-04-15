@@ -1,7 +1,86 @@
-@mixin font-size($size, $base: 16px) {
-    font-size: $size; // fallback for old browsers
-    font-size: calc(($size / $base) * 1rem);
+@use 'sass:meta';
+@use 'sass:map';
+@use "sass:string";
+@use "sass:selector";
+@use "sass:list";
+
+// =============================================================================
+// Colors
+// =============================================================================
+
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+    background: $start-color;
+
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+// =============================================================================
+// Font
+// =============================================================================
+
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+    font-size: $font-size * 1px;
+    // font-size: $font-size * 0.1rem;
+    // example using rem values and 62.5% font-size so 1rem = 10px
+  
+    @if $line-height==normal {
+      line-height: normal;
+    } @else {
+      line-height: $line-height / $font-size;
+    }
+  
+    @if $letter-spacing==normal {
+      letter-spacing: normal;
+    } @else {
+      letter-spacing: #{$letter-spacing / $font-size}em;
+    }
+}
+
+// =============================================================================
+// Common
+// =============================================================================
+//mixin-font-face
+@function str-replace($string, $search, $replace: "") {
+  $index: string.index($string, $search);
+  @if $index {
+      @return string.slice($string, 1, $index - 1) + $replace + string.replace(string.slice($string, $index + string.length($search)), $search, $replace);
   }
+  @return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff ttf svg otf) {
+  $src: null;
+  $extmods: (
+          svg: "#" + str-replace($name, " ", "_")
+  );
+  $formats: (
+          ttf: "truetype"
+  );
+  @each $ext in $exts {
+      $extmod: if(sass(map.has-key($extmods, $ext)): $ext + map.get($extmods, $ext); else: $ext);
+      $format: if(sass(map.has-key($formats, $ext)): map.get($formats, $ext); else: $ext);
+      $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
+  }
+  @font-face {
+      font-family: string.quote($name);
+      font-style: $style;
+      font-weight: $weight;
+      src: $src;
+      font-display: swap;
+  }
+}
+// =============================================================================
+// Responsive
+// =============================================================================
 
 @mixin mobile {
     &.small { @content; }

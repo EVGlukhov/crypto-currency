@@ -12,19 +12,16 @@ export default defineConfig({
     react(), 
     libInjectCss(),
     dts({
-      exclude: ['**/*.stories.tsx'],
+      rollupTypes: true,
+      exclude: ['node_modules/**']
     })
   ],
   build: {
     outDir: 'build',
     reportCompressedSize: true,
-    copyPublicDir: false,
-    cssCodeSplit: true,
-    watch: {
-      include: 'src/**',
-    },
+    cssCodeSplit: false,
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: resolve(import.meta.dirname, "./src/index.ts"),
       name: "ui",
       fileName: "ui",
       formats: ['es', 'umd'],
@@ -32,6 +29,10 @@ export default defineConfig({
     rolldownOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
+        assetFileNames: 'ui.[ext]',
+        preserveModules: false,
+        codeSplitting: false,
+        minify: false,
         globals: {
           react: "React",
           "react-dom": "React-dom",
@@ -46,7 +47,8 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
     alias: {
-      '@ui': resolve(__dirname, './src'),
+      '@': resolve(import.meta.dirname, './src'),
     },
-  },  
+  },
+  publicDir: 'public'
 } satisfies UserConfig);

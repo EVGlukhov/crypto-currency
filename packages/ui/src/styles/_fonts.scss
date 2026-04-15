@@ -1,0 +1,9 @@
+@use '@ui/styles/mixins';
+
+// @include mixins.font-face("Poppins", "/fonts/poppins/poppins-regular", ttf, null, null, 400, normal);
+// @include mixins.font-face("Poppins", "/fonts/poppins/poppins-medium", ttf, null, null, 500, normal);
+// @include mixins.font-face("Poppins", "/fonts/poppins/poppins-semibold", ttf, null, null, 600, normal);
+
+@include mixins.font-face(Inter, "/assets/fonts/inter/Inter-Regular", 400, normal, woff);
+@include mixins.font-face(Inter, "/assets/fonts/inter/Inter-Medium", 500, normal, woff);
+@include mixins.font-face(Inter, "/assets/fonts/inter/Inter-SemiBold", 600, normal, woff);

@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import clsx from 'clsx';
-import { Typography } from '@ui/components';
+import Typography from '../Typography/Typography';
 
 import styles from './styles.module.scss';
 
