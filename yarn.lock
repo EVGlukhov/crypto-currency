@@ -344,9 +344,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@crypto-currency/sb@workspace:packages/storybook":
+"@crypto-currency/sb@workspace:packages/sb":
   version: 0.0.0-use.local
-  resolution: "@crypto-currency/sb@workspace:packages/storybook"
+  resolution: "@crypto-currency/sb@workspace:packages/sb"
   dependencies:
     "@chromatic-com/storybook": "npm:^5.1.2"
     "@crypto-currency/ui": "npm:0.0.13"
