@@ -1,6 +1,6 @@
 {
   "name": "@crypto-currency/ui",
-  "version": "0.0.9",
+  "version": "0.0.13",
   "private": true,
   "type": "module",
   "description": "The package containing UI components",
@@ -34,14 +34,9 @@
   "files": [
     "build"
   ],
-  "main": "./build/ui.umd.cjs",
-  "module": "./build/ui.js",
+  "types": "./build/ui.d.ts",
   "exports": {
-    ".": {
-      "types": "./build/index.d.ts",
-      "import": "./build/ui.js",
-      "require": "./build/ui.umd.cjs"
-    },
+    ".": "./build/ui.js",
     "./*.css": "./build/*.css"
   },
   "sideEffects": [

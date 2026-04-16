@@ -18,21 +18,24 @@ export default defineConfig({
   ],
   build: {
     outDir: 'build',
+    assetsInlineLimit: 0,
     reportCompressedSize: true,
+    emptyOutDir: true,
     cssCodeSplit: false,
     lib: {
-      entry: resolve(import.meta.dirname, "./src/index.ts"),
-      name: "ui",
-      fileName: "ui",
-      formats: ['es', 'umd'],
+      entry: {
+        ui: "./src/main.ts",
+        styles: "./src/styles.scss",
+      },
+      formats: ['es'],
     },
     rolldownOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
-        assetFileNames: 'ui.[ext]',
+        assetFileNames: '[name].[ext]',
         preserveModules: false,
-        codeSplitting: false,
-        minify: false,
+        codeSplitting: true,
+        minify: true,
         globals: {
           react: "React",
           "react-dom": "React-dom",
